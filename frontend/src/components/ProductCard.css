@@ -1,0 +1,116 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: all 0.25s ease;
+  color: var(--color-text);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text);
+}
+
+.product-card__image {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.product-card__fav {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--color-text-muted);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+  z-index: 2;
+  line-height: 1;
+}
+
+.product-card__fav:hover {
+  background: var(--color-surface);
+  color: var(--color-accent);
+  transform: scale(1.08);
+}
+
+.product-card__fav--active {
+  color: #D94A6E;
+}
+
+.product-card__fav--active:hover {
+  color: #D94A6E;
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card__image--flower {
+  background: linear-gradient(180deg, #FAF8F6 0%, #F3E8E2 100%);
+}
+
+.product-card__image--flower img {
+  object-fit: contain;
+  padding: 12px;
+}
+
+.product-card:hover .product-card__image img {
+  transform: scale(1.04);
+}
+
+.product-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-soft);
+  color: var(--color-main);
+  font-size: 14px;
+}
+
+.product-card__body {
+  padding: 16px 18px 20px;
+}
+
+.product-card__name {
+  font-size: 17px;
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+.product-card__color {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.product-card__composition {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.product-card__price {
+  font-size: 16px;
+  color: var(--color-main);
+}

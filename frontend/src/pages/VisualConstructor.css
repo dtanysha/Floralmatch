@@ -1,0 +1,717 @@
+/* ===========================
+   VISUAL CONSTRUCTOR — Layout
+   =========================== */
+.vc {
+  display: grid;
+  grid-template-columns: 500px 1fr 500px;
+  gap: 0;
+  min-height: calc(100vh - 80px);
+}
+
+/* ===========================
+   ЛЕВАЯ ПАНЕЛЬ — ЦВЕТЫ
+   =========================== */
+.vc__panel {
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: 10px 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+}
+
+.vc__panel-title {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+/* ПОИСК */
+.vc__search {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.vc__search:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.vc__search::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ФИЛЬТР-БЛОК */
+.vc__filter-block {
+  margin-bottom: 14px;
+}
+
+.vc__filter-label {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+
+.vc__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vc__filter-chip {
+  padding: 7px 14px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-main);
+}
+
+.vc__filter-chip:hover {
+  border-color: var(--color-accent);
+}
+
+.vc__filter-chip--active {
+  background: var(--color-main);
+  color: white;
+  border-color: var(--color-main);
+}
+
+.vc__filter-chip--more {
+  background: transparent;
+  border-style: dashed;
+}
+
+/* SWATCHES — квадраты цветов */
+.vc__swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vc__swatch {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vc__swatch:hover {
+  border-color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+.vc__swatch--active {
+  border-color: var(--color-main);
+  box-shadow: 0 0 0 2px var(--color-accent-soft);
+}
+
+.vc__swatch-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.vc__swatch-check {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-main);
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+}
+
+.vc__swatch--more {
+  background: transparent;
+  border-style: dashed;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.vc__swatch--more:hover {
+  transform: none;
+}
+
+/* СБРОС */
+.vc__reset {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px 0;
+  margin-bottom: 14px;
+  font-family: var(--font-main);
+}
+
+.vc__reset:hover {
+  color: var(--color-main);
+}
+
+.vc__flower-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vc__flower-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  font-family: var(--font-main);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vc__flower-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.vc__flower-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.vc__flower-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.vc__flower-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.vc__flower-name {
+  font-size: 17px;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vc__flower-color {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  opacity: 0.8;
+}
+
+.vc__flower-price {
+  font-size: 16px;
+  color: var(--color-main);
+}
+
+.vc__status {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+/* ===========================
+   ХОЛСТ
+   =========================== */
+.vc__canvas-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: linear-gradient(180deg, #FAF8F6 0%, #F3E8E2 100%);
+}
+
+.vc__canvas {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.vc__vase {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: auto;
+  z-index: 2;
+  filter: drop-shadow(0 4px 16px rgba(139, 125, 107, 0.2));
+  pointer-events: none;
+}
+
+.vc__canvas-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-text-muted);
+  font-size: 18px;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0.7;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.vc__clear-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 16px;
+  font-size: 13px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--color-text-muted);
+  z-index: 10;
+  font-family: var(--font-main);
+}
+
+.vc__clear-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+/* Цветок на холсте */
+.vc__canvas-flower {
+  position: absolute;
+  z-index: 7;
+  cursor: grab;
+  user-select: none;
+}
+
+.vc__canvas-flower:active {
+  cursor: grabbing;
+  z-index: 10;
+}
+
+.vc__canvas-flower-img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Выделенный цветок на холсте — поднимаем над остальными, чтобы все клики
+   в его зоне ловил именно он (а не цветок под ним). */
+.vc__canvas-flower--selected {
+  z-index: 100;
+}
+
+.vc__canvas-flower--selected .vc__canvas-flower-img {
+  filter: drop-shadow(0 0 0 2px var(--color-main))
+    drop-shadow(0 4px 12px rgba(139, 125, 107, 0.35));
+}
+
+.vc__canvas-flower--selected .vc__canvas-flower-actions {
+  opacity: 1;
+}
+
+.vc__canvas-flower-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+  border: 2px dashed var(--color-border);
+}
+
+/* Кнопки на цветке — показываются ТОЛЬКО когда цветок выделен.
+   Раньше показывались и на :hover, из-за чего при перещёлкивании на цветок
+   в стопке кнопки оставались видны на исходном цветке под курсором. */
+.vc__canvas-flower-actions {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 20;
+}
+
+.vc__canvas-flower--selected .vc__canvas-flower-actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.vc__canvas-flower-actions button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  line-height: 1;
+  padding: 0;
+}
+
+.vc__canvas-flower-actions button:hover {
+  background: var(--color-main);
+  color: white;
+  border-color: var(--color-main);
+}
+
+/* Bounding box — рамка + ручки */
+.vc__bbox {
+  position: absolute;
+  inset: -2px;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.vc__canvas-flower--selected .vc__bbox {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Угловые квадратики (декоративные) */
+.vc__bbox-corner {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: white;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 1px;
+}
+
+.vc__bbox-corner--tl { top: -4px; left: -4px; }
+.vc__bbox-corner--bl { bottom: -4px; left: -4px; }
+.vc__bbox-corner--br { bottom: -4px; right: -4px; }
+
+/* Единый контрол вращение+масштаб — правый верхний угол */
+.vc__bbox-transform {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  background: var(--color-accent);
+  border-radius: 50%;
+  cursor: grab;
+  pointer-events: auto;
+  user-select: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.vc__bbox-transform:hover {
+  background: var(--color-main);
+}
+
+.vc__bbox-transform:active {
+  cursor: grabbing;
+  background: var(--color-main);
+}
+
+/* ===========================
+   УПАКОВКА — рамка/фон холста
+   =========================== */
+.vc__wrap-frame {
+  position: absolute;
+  inset: 16px;
+  border: 3px solid var(--wrap-border, transparent);
+  border-radius: 16px;
+  background: var(--wrap-bg, transparent);
+  z-index: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Кнопки выбора упаковки/ленты */
+.vc__options {
+  width: 100%;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Аккордеон */
+.vc__accordion {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.vc__accordion:last-child {
+  border-bottom: none;
+}
+
+.vc__accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.vc__accordion-header:hover {
+  background: var(--color-bg);
+}
+
+.vc__accordion-arrow {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  transition: transform 0.2s;
+}
+
+.vc__accordion-arrow--open {
+  transform: rotate(180deg);
+}
+
+.vc__accordion-body {
+  padding: 0 20px 12px;
+}
+
+.vc__option-label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.vc__option-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.vc__option-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-family: var(--font-main);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vc__option-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.vc__option-btn--active {
+  background: var(--color-main);
+  color: white;
+  border-color: var(--color-main);
+}
+
+.vc__option-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+.vc__option-btn--active .vc__option-swatch {
+  border-color: rgba(255,255,255,0.4);
+}
+
+.vc__option-price {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+
+/* ===========================
+   ПРАВАЯ ПАНЕЛЬ — ИТОГО
+   =========================== */
+.vc__summary {
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vc__summary-title {
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+
+.vc__summary-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vc__summary-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 16px;
+}
+
+.vc__summary-name {
+  color: var(--color-text);
+}
+
+.vc__summary-qty {
+  color: var(--color-text-muted);
+}
+
+.vc__summary-price {
+  color: var(--color-main);
+  min-width: 56px;
+  text-align: right;
+}
+
+.vc__summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  margin-top: 14px;
+  border-top: 1px solid var(--color-border);
+  font-size: 17px;
+}
+
+.vc__summary-total-price {
+  font-size: 28px;
+  color: var(--color-main);
+  font-weight: 500;
+}
+
+.vc__cart-btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 1024px) {
+  .vc {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .vc__panel {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    max-height: none;
+    padding: 16px;
+  }
+
+  .vc__flower-list {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+
+  .vc__flower-card {
+    flex-shrink: 0;
+    min-width: 140px;
+  }
+
+  .vc__summary {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 768px) {
+  .vc__canvas {
+    min-height: 400px;
+  }
+
+  .vc__canvas-flower-img {
+    width: 70px;
+  }
+
+  .vc__vase {
+    width: 100px;
+  }
+
+  .vc__wrap-container {
+    width: 120px;
+    height: 130px;
+  }
+
+  .vc__wrap-img {
+    width: 120px;
+  }
+}
