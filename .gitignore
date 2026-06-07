@@ -1,11 +1,9 @@
-# === СЕКРЕТЫ ===
+# === Секреты ===
 .env
 .env.local
 **/.env
 
-# === Личные настройки и AI-tooling ===
-.claude/
-CLAUDE.md
+# === IDE ===
 .vscode/
 .idea/
 
@@ -43,8 +41,7 @@ tmp/
 alembic/versions/*.pyc
 
 # === Личные черновики ===
-bouquets_dataset*.numbers
 *.numbers
 
-# === Скриншоты тестовых заказов (не нужны в репо) ===
+# === Скриншоты тестовых заказов ===
 frontend/public/uploads/
