@@ -1,0 +1,50 @@
+# === СЕКРЕТЫ ===
+.env
+.env.local
+**/.env
+
+# === Личные настройки и AI-tooling ===
+.claude/
+CLAUDE.md
+.vscode/
+.idea/
+
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+*.db
+venv/
+.venv/
+backend/venv/
+*.egg-info/
+.pytest_cache/
+
+# === Node ===
+node_modules/
+**/node_modules/
+*.log
+
+# === Build artifacts ===
+dist/
+build/
+frontend/dist/
+frontend/.vite/
+
+# === OS ===
+.DS_Store
+**/.DS_Store
+
+# === Backup & tmp ===
+backups/
+tmp/
+
+# === Alembic ===
+alembic/versions/*.pyc
+
+# === Личные черновики ===
+bouquets_dataset*.numbers
+*.numbers
+
+# === Скриншоты тестовых заказов (не нужны в репо) ===
+frontend/public/uploads/

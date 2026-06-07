@@ -1,0 +1,55 @@
+id,название,тип_цветка,цвет,цена_руб,изображение,в_наличии
+1408,Роза,роза,оранжевый,180,/flowers/Rose-orange.png,да
+1409,Роза,роза,розовый,180,/flowers/Rose-pink.png,да
+1410,Роза,роза,красный,180,/flowers/Rose-red.png,да
+1411,Роза,роза,белый,180,/flowers/Rose-white.png,да
+1412,Роза,роза,жёлтый,180,/flowers/Rose-yellow.png,да
+1413,Кустовая роза,кустовая роза,оранжевый,220,/flowers/Bushrose-orange.png,да
+1414,Кустовая роза,кустовая роза,розовый,220,/flowers/Bushrose-pink.png,да
+1415,Кустовая роза,кустовая роза,розовый,220,/flowers/Bushrose-softpink.png,да
+1416,Кустовая роза,кустовая роза,белый,220,/flowers/Bushrose-white.png,да
+1417,Гортензия,гортензия,голубой,700,/flowers/Hydrangea-blue.png,да
+1418,Гортензия,гортензия,розовый,700,/flowers/Hydrangea-pink.png,да
+1419,Гортензия,гортензия,красный,700,/flowers/Hydrangea-red.png,да
+1420,Гортензия,гортензия,фиолетовый,700,/flowers/Hydrangea-violet.png,да
+1421,Гортензия,гортензия,белый,700,/flowers/Hydrangea-white.png,да
+1422,Гортензия,гортензия,жёлтый,700,/flowers/Hydrangea-yellow.png,да
+1423,Пион,пион,розовый,450,/flowers/Peony-pink.png,да
+1424,Пион,пион,розовый,450,/flowers/Peony-softpink.png,да
+1425,Пион,пион,белый,450,/flowers/Peony-white.png,да
+1426,Пион,пион,жёлтый,450,/flowers/Peony-yellow.png,да
+1427,Гербера,гербера,оранжевый,240,/flowers/Gerbera-orange.png,да
+1428,Гербера,гербера,розовый,240,/flowers/Gerbera-pink.png,да
+1429,Гербера,гербера,красный,240,/flowers/Gerbera-red.png,да
+1430,Гербера,гербера,белый,240,/flowers/Gerbera-white.png,да
+1431,Гербера,гербера,жёлтый,240,/flowers/Gerbera-yellow.png,да
+1432,Тюльпан,тюльпан,оранжевый,220,/flowers/Tulip-orange.png,да
+1433,Тюльпан,тюльпан,розовый,220,/flowers/Tulip-pink.png,да
+1434,Тюльпан,тюльпан,красный,220,/flowers/Tulip-red.png,да
+1435,Тюльпан,тюльпан,красный,220,/flowers/Tulip-red-white.png,да
+1436,Тюльпан,тюльпан,белый,220,/flowers/Tulip-white.png,да
+1437,Тюльпан,тюльпан,жёлтый,220,/flowers/Tulip-yellow.png,да
+1438,Ранункулус,ранункулус,розовый,450,/flowers/Ranunculus-pink.png,да
+1439,Ранункулус,ранункулус,красный,450,/flowers/Ranunculus-red.png,да
+1440,Ранункулус,ранункулус,розовый,450,/flowers/Ranunculus-softpink.png,да
+1441,Ранункулус,ранункулус,белый,450,/flowers/Ranunculus-white.png,да
+1442,Ранункулус,ранункулус,жёлтый,450,/flowers/Ranunculus-yellow.png,да
+1443,Диантус,диантус,зелёный,210,/flowers/Dianthus-green.png,да
+1444,Диантус,диантус,красный,210,/flowers/Dianthus-red.png,да
+1445,Диантус,диантус,розовый,210,/flowers/Dianthus-softpink.png,да
+1446,Диантус,диантус,фиолетовый,210,/flowers/Dianthus-violet.png,да
+1447,Диантус,диантус,белый,210,/flowers/Dianthus-white.png,да
+1448,Эустома,эустома,розовый,280,/flowers/Eustoma-pink.png,да
+1449,Эустома,эустома,белый,280,/flowers/Eustoma-white.png,да
+1450,Хризантема,хризантема,оранжевый,210,/flowers/Chrysanthemum-orange.png,да
+1451,Хризантема,хризантема,розовый,210,/flowers/Chrysanthemum-pink.png,да
+1452,Хризантема,хризантема,белый,210,/flowers/Chrysanthemum-white.png,да
+1453,Хризантема,хризантема,жёлтый,210,/flowers/Chrysanthemum-yellow.png,да
+1454,Кустовая хризантема,кустовая хризантема,оранжевый,260,/flowers/Bushchrysanthemum-orange.png,да
+1455,Кустовая хризантема,кустовая хризантема,розовый,260,/flowers/Bushchrysanthemum-pink.png,да
+1456,Кустовая хризантема,кустовая хризантема,белый,260,/flowers/Bushchrysanthemum-white.png,да
+1457,Кустовая хризантема,кустовая хризантема,жёлтый,260,/flowers/Bushchrysanthemum-yellow.png,да
+1458,Гипсофила,гипсофила,белый,220,/flowers/Gypsophila-white.png,да
+1459,Гипсофила,гипсофила,розовый,220,/flowers/Gypsophila-pink.png,да
+1460,Гипсофила,гипсофила,оранжевый,220,/flowers/Gypsophila-orange.png,да
+1462,Эвкалипт,эвкалипт,зелёный,200,/flowers/Eucalyptus-green.png,да
